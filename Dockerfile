@@ -15,4 +15,6 @@ WORKDIR /root
 RUN git config --system url."git@github.com:".insteadOf "https://github.com/"
 RUN git config --system url."git@bitbucket.org:".insteadOf "https://bitbucket.org/"
 RUN mkdir .ssh
-COPY ssh.config .ssh/config
+# COPY ssh.config .ssh/config
+RUN ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+RUN ssh-keyscan -t rsa bitbucket.org >> ~/.ssh/known_hosts
