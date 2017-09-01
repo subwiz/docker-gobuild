@@ -1,4 +1,4 @@
 #!/bin/sh
 
-docker build . -t subwiz/gobuild
-docker push subwiz/gobuild
+docker build . -t bambooengg/gobuild
+docker push bambooengg/gobuild
